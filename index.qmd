@@ -1,7 +1,8 @@
 ::: {.content-hidden when-format="pdf"}
 This is an online version of the Cortland, Nebraska Zoning Regulations. It is intended for supplemental use. If there is a conflict between these regulations and the official zoning regulations, as a text or paper document, it is assumed that the official regulations are correct.
 
-You can see documentation for these regulations at <a href = "https://github.com/five-rule-planning/Cortland-Zoning-Regulations-Online">
+You can see documentation for these regulations at <a href = "https://github.com/five-rule-planning/Cortland-Zoning-Regulations-Online"> https://github.com/five-rule-planning/Cortland-Zoning-Regulations-Online.</a>
+
 :::
 
 # General Provisions
