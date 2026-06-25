@@ -1,0 +1,56 @@
+{
+  "index.qmd": {
+    "index.html": "5023d824"
+  },
+  "intro.qmd": {
+    "intro.html": "11f10046"
+  },
+  "summary.qmd": {
+    "summary.html": "3a9d3a8c"
+  },
+  "references.qmd": {
+    "references.html": "a2a2b439"
+  },
+  "01_general_provisions.qmd": {
+    "01_general_provisions.html": "83f39abf"
+  },
+  "02_application_of_regulations.qmd": {
+    "02_application_of_regulations.html": "22c830c4"
+  },
+  "03_general_definitions.qmd": {
+    "03_general_definitions.html": "feb2bf5d"
+  },
+  "04_establishment_and_designation_of_districts.qmd": {
+    "04_establishment_and_designation_of_districts.html": "7a18d18a"
+  },
+  "05_zoning_districts.qmd": {
+    "05_zoning_districts.html": "690c2cc4"
+  },
+  "06_special_use_permit.qmd": {
+    "06_special_use_permit.html": "b67621f3"
+  },
+  "07_parking_regulations.qmd": {
+    "07_parking_regulations.html": "cccf01ec"
+  },
+  "08_accessory_uses.qmd": {
+    "08_accessory_uses.html": "483dbc96"
+  },
+  "09_board_of_adjustment.qmd": {
+    "09_board_of_adjustment.html": "b74ab553"
+  },
+  "10_administrative_provisions.qmd": {
+    "10_administrative_provisions.html": "a16d4435"
+  },
+  "11_amendment.qmd": {
+    "11_amendment.html": "81073953"
+  },
+  "12_complaints.qmd": {
+    "12_complaints.html": "aa61ea7b"
+  },
+  "13_legal_status_provisions.qmd": {
+    "13_legal_status_provisions.html": "0645acb5"
+  },
+  "99_appendix.qmd": {
+    "99_appendix.html": "1b0048b8"
+  }
+}

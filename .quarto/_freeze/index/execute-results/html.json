@@ -1,0 +1,15 @@
+{
+  "hash": "ad62e427c4b3132bb89e3ed155e3a88f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# General Provisions\n\n\n\n## Title\n\nThis Ordinance shall be known, referred to, and cited as the Zoning Ordinance of the Village of Cortland, Nebraska.\n\n## Jurisdiction\n\nThe provisions of these Regulations shall apply within the planning jurisdiction of Cortland, Nebraska, as established on the map entitled “The Official Zoning Map of the Village of Cortland, Nebraska.” The jurisdiction includes the zoning areas within and up to one mile of the corporate limits of the Village of Cortland, Nebraska.\n\n## Purpose\n\nIn pursuance of the authority conferred by <a href = \"https://nebraskalegislature.gov/laws/statutes.php?statute=19-901\">Sections 19-901 through 19-914 of Nebraska Statutes</a> as amended, this ordinance is enacted for the purpose of promoting the health, safety, convenience, order, prosperity and welfare of the present and future inhabitants in the Village of Cortland by regulating and restricting the height, number of stories, and size of buildings and other structures, the size of yards, courts, and other open spaces, and the location and use of buildings, structures and land for trade, industry, residence, or other purposes in accordance with the Cortland Comprehensive Plan and the zoning maps adopted herewith.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,4 @@
+- source: project
+  posit-connect-cloud:
+    - id: 019cf80c-d3c4-cd30-6051-7ccc5cfa911d
+      url: https://connect.posit.cloud/jordanduffinw/content/019cf80c-d3c4-cd30-6051-7ccc5cfa911d

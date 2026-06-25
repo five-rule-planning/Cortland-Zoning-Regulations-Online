@@ -1,0 +1,45 @@
+project:
+  type: book
+
+book:
+  title: |
+    Village of Cortland, Nebraska\
+    Zoning Regulations
+  date: "Last Revised December 11, 2024"
+  output-file: cortland-ne-zoning-regulations
+  chapters:
+    - index.qmd
+    - 02_application_of_regulations.qmd
+    - 03_general_definitions.qmd
+    - 04_establishment_and_designation_of_districts.qmd
+    - 05_zoning_districts.qmd
+    - 06_special_use_permit.qmd
+    - 07_parking_regulations.qmd
+    - 08_accessory_uses.qmd
+    - 09_board_of_adjustment.qmd
+    - 10_administrative_provisions.qmd
+    - 11_amendment.qmd
+    - 12_complaints.qmd
+    - 13_legal_status_provisions.qmd
+  appendices:
+    - 99_appendix.qmd
+  favicon: five_rule_logo.png
+  downloads: [pdf]
+
+format:
+  html:
+    page-layout: full
+    reference-location: margin
+    title-block-style: none
+    number-sections: true
+    mainfont: "Verdana"
+    sansfont: "Verdana"
+    toc-location: right
+    toc-title: "Contents"
+    default-image-extension: svg  
+  pdf:
+    mainfont: "Verdana"
+    sansfont: "Verdana"
+    linkcolor: Teal
+    toc-depth: 2
+pdf-engine: xelatex

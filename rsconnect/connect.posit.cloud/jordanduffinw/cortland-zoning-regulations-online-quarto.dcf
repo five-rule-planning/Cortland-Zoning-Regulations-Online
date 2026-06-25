@@ -1,0 +1,10 @@
+name: cortland-zoning-regulations-online-quarto
+title: cortland-zoning-regulations-online-quarto
+username: jordanduffinw
+account: jordanduffinw
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 019ce897-85fe-2409-48dc-3e54d14c8ef1
+bundleId:
+url: https://connect.posit.cloud/jordanduffinw/content/019ce897-85fe-2409-48dc-3e54d14c8ef1
+version: 1

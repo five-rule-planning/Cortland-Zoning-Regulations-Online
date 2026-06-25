@@ -1,0 +1,155 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+library(tidyverse)
+library(sf)
+library(mapview)
+
+mainColor <- "#90D5FF"
+mainColorDark <- "#8A817C"
+contrast1 <- "#a40707"
+contrast2 <- "#6600FF"
+typefaceDark <- "#0047AB"
+
+cortland <- read_sf(dsn = "gis/shapefiles/shp-zoning-20251008/shp-zoning-20251008.shp")
+```
+
+::: {.content-hidden when-format="pdf"}
+
+# Online Zoning Map {.appendix}
+This is an online version of the Cortland, Nebraska Zoning Map. It is intended for supplemental use. If there is a conflict between this map and the official zoning map, it is assumed that the official map is correct.
+
+<br>
+
+```{r Viz Zoning}
+#| warning: false
+#| message: false
+#| echo: false
+zoning <- cortland %>%
+  mutate(
+    Zoning = case_when(
+      zoning == "ag" ~ "AG-1",
+      zoning == "ag2" ~ "AG-2",
+      zoning == "r1" ~ "R-1",
+      zoning == "r2" ~ "R-2",
+      zoning == "r3" ~ "R-3",
+      zoning == "c1" ~ "C-1",
+      zoning == "c2" ~ "C-2",
+      zoning == "i" ~ "I",
+      zoning == "uz" ~ "Unzoned"
+    ) %>%
+      factor(
+        x = .,
+        levels = c(
+          "AG-1",
+          "AG-2",
+          "R-1",
+          "R-2",
+          "R-3",
+          "C-1",
+          "C-2",
+          "I",
+          "Unzoned"
+        )
+      )
+  ) %>%
+  select(PID, Zoning)
+
+mapview::mapview(
+  zoning,
+  zcol = "Zoning",
+  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  col.regions = c(
+    "#A3FF73",
+    "#38A800",
+    "#FF7F7F",
+    "#FF0000",
+    "#A80000",
+    "#73FFDF",
+    "#005CE6",
+    "#FFAA00",
+    "#BEC8D1"
+  ),
+  alpha.regions = c(0.50),
+  lwd = 1.5,
+  layer.name = "Zoning"
+)
+```
+
+
+:::
+
+# Legacy Zoning Regulations {.appendix}
+This section contains language used in the Zoning Regulations prior to amendment on some specified date. Regulations in this section do not carry the force of law; rather, they serve as a reference document for interested parties to see how regulations have been amended over time.
+
+## Prior to December 11, 2024
+**Accessory Use of Building**: A subordinate building or use which customarily is incidental to that of the main or principal building or use of the premises. Customary accessory uses include, but are not limited to, tennis courts, swimming pools, detached garages, garden houses, antenna/satellite dishes, amateur radio or land mobile towers of less than 100 feet, and residential, agricultural and recreational storage sheds. Garages or other accessory uses attached to the principal structure shall be considered a part thereof and meet the requirements of the principal structure.
+
+**Alley**: A public or private thoroughfare which affords only a secondary means of access to the property abutting thereon.
+
+**5.7 C-2 Highway Commercial District**
+
+**5.71 Intent**: The C-2 Highway Commercial District is intended for the purpose of servicing highway travelers and providing limited commercial services. Off-street parking is required to reduce possible adverse effects on adjacent properties.
+
+**5.72 Permitted Principle Uses and Structures**: The following shall be permitted as uses by right:
+
+1. Automobile sales;
+2. Automobile wash facilities;
+3. Churches and other religious organizations;
+4. Construction sales and services;
+5. Commercial operations and businesses, intended for the purpose of servicing travel and recreational users;
+6. Commercial recreational facilities (bowling alleys, miniature golf courses and similar uses);
+7. Convenience store or filling station;
+8. Detached banking facilities (ATM);
+9. Electric and telephone substations;
+10. Farm implement sales and services;
+11. Garden centers and nurseries;
+12. Irrigation equipment sales and services;
+13. Mini storage facilities;
+14. Mobile homes sales;
+15. Motels, including accessory service uses, such as swimming pools, liquor stores and restaurants;
+16. Restaurants and cafes;
+17. Service stations;
+18. Stores or shops for sale of goods at retail;
+19. Transportation warehousing;
+20. Truck and freight terminals;
+21. Utilities, including shops and offices; and
+22. Medical clinics.
+
+**5.73 Permitted Accessory Uses and Structures**: The following accessory uses shall be permitted:
+1. Accessory uses and structures normally appurtenant to the permitted uses and structures and to uses and structures permitted as special uses. Uses and Structures**
+
+**5.74 Permitted Special Uses**: A building or premises may be used for the following purposes in the C-2 Highway Commercial District if a special use permit for such use has been obtained in accordance with Article 6 of these regulations.
+
+1. Private clubs and lodges;
+2. Facilities for the commercial storage or sale of fertilizer or toxic or flammable agriculture chemicals;
+3. Radio studios, transmitters and antenna;
+4. Recycling centers; and
+5. Single family dwellings.
+
+**5.75 Screening Requirements**:
+1. Where a site adjoins or is located across an alley from the Residential District, a solid wall or fence or compact evergreen hedge six (6) feet in height may be required on the property line common to such districts, except in a required front yard.
+2. Open storage of materials attendant to a permitted use or special permit use shall be permitted only within an area surrounded or screened by a solid wall or fence.
+
+**5.76  Prohibited Uses**:
+1. All other uses and structures which are not specifically permitted or permissible as special uses shall be prohibited from the C-2 Highway Commercial District.
+
+**5.77 Height and Areas Regulations**: The maximum height and minimum area regulations shall be as follows:
+
+a) General Requirements
+```{r c2 legacy heights, echo = FALSE}
+c2_legacy <- data.frame("Type" = c("Permitted Uses"),
+                 "Lot Area (Sq. Ft.)" = c("7,500"),
+                 "Lot Width" = c("50'"),
+                 "Required Front Yard" = c("25'"),
+                 "Required Side Yard" = c("7'"),
+                 "Required Rear Yard" = c("20'"),
+                 "Height" = c("35'")
+                 )
+colnames(c2_legacy) <- c("Type", "Lot Area (Sq. Ft.)", "Lot Width", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
+knitr::kable(c2_legacy)
+```
+
+
+**5.78 Parking Regulations**
+1. Parking within the C-2 Highway Commercial District shall be in conformance with the provisions of Article 7 of these regulations.
