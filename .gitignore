@@ -14,5 +14,5 @@ meetings/
 
 /rsconnect/
 
-/.quarto/
+.quarto/
 **/*.quarto_ipynb
