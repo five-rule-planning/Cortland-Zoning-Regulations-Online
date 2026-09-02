@@ -42,4 +42,8 @@ format:
     sansfont: "Verdana"
     linkcolor: Teal
     toc-depth: 2
+    include-in-header: 
+      text: |
+        \usepackage{scrlayer-scrpage}
+        \lofoot{Last Revised December 2024\\by Ordinance XXXXX}
 pdf-engine: xelatex
