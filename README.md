@@ -1,0 +1,1 @@
+This is the GitHub repository for the Cortland, Nebraska Zoning Regulations. We use this to keep track of all text amendments to the document, including when the zoning regulations document is updated by Ordinance.
