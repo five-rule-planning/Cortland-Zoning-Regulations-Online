@@ -3,12 +3,7 @@
 ## Accessory Building
 Buildings and structures may be erected and land may be used for purposes which are clearly incidental to, and customarily and commonly associated with the main permitted use of the premises. Such accessory buildings and uses shall be so constructed, maintained, and conducted as to not produce noise, vibration, dust, dirt, fly ash, odor, noxious gases, heat or glare which is injurious, damaging, unhealthful or disturbing to adjacent property, or the users thereof, and shall be on the premises of the main use.
 
-Any accessory building shall have a minimum setback of five (5) feet and all garage entrances must have a minimum of ten (10) feet long drive when garage opening is perpendicular to the access street or alley. Attached garages are considered part of the principal building. Accessory buildings shall not exceed twenty (20) feet in height, or the height of the principal permitted buildings, whichever is greater. There shall be a maximum of two (2) accessory buildings. The minimum distance between accessory buildings shall be five (5) feet. The following limitations shall apply:
-
-<ol>
-<li>Parcels of one hundred (100) feet in width or more: the maximum area of one of the accessory buildings equaling seven hundred twenty (720) square feet, or half the area of the principal permitted dwelling, whichever is greater. A second accessory building shall have a maximum area of one hundred twenty (120) square feet.</li>
-<li>Parcels of ninety-nine (99) feet in width or less: the maximum area of two accessory buildings combined shall be five hundred seventy-six (576) square feet.</li>
-</ol>
+Any accessory building shall have a minimum setback of five (5) feet and all garage entrances must have a minimum of ten (10) feet long drive when garage opening is perpendicular to the access street or alley. Attached garages are considered part of the principal building. Accessory buildings shall not exceed twenty (20) feet in height, or the height of the principal permitted buildings, whichever is greater. There shall be a maximum of two (2) accessory buildings. The minimum distance between accessory buildings shall be five (5) feet. The maximum floor area of all accessory buildings shall not exceed one thousand two hundred (1,200) square feet; provided, that no lot shall have a maximum building coverage which exceeds forty (40) percent of the lot size. For the purpose of computing the percentage of building coverage on a parcel, the maximum building coverage shall apply to area covered by all buildings or structures on the parcel, but shall not apply to the areas covered by driveways or sidewalks. (Ref. 17-505 RS Neb.)
 
 ## Home Occupations
 An occupation or activity carried on within the dwelling or accessory building by a member of the family residing on the premises, which occupation or activity is incidental and secondary to the residential occupancy and does not change the residential character nor infringe upon the right of neighboring residents to enjoy a peaceful occupancy of their homes.
@@ -54,7 +49,7 @@ existing buildings provided that no building shall be required to have a front y
 <p>Where forty percent (40%) or more of the frontage on one side of a street between two intersecting streets is developed with buildings that have a front yard less than the required, new buildings shall not be erected closer to the street than the nearest building on the block.</p>
 </blockquote>
 
-### Structureal Projections
+### Structural Projections
 The ordinary projections of chimneys and flues, buttresses, eaves, overhangs, open-unenclosed steps or stoops up to 5’ in height may extend into required yards for a distance of not more than two (2) feet in the required side yard and not more than five (5) feet in the required front yard.
 
 ## Exceptions to Height Regulations
@@ -186,3 +181,31 @@ On a comer lot in any C-1 district where the use is residential, no planting, st
 <li>All lighting from the canopy must be substantially confined to the ground area directly beneath the perimeter of the canopy.</li>
 <li>All exterior lighting for canopies, and/or service areas shall be of an indirect nature, emanating only from fixtures located under canopies, under eaves on the principal building or at ground level in the landscaping. Exterior lighting shall be arranged and shielded so there shall be no glare or reflections onto adjacent properties or street rights-of-way.</li>
 </ol>
+
+## Outdoor Storage and Display of Merchandise
+
+### Outdoor Storage for Nonresidential Uses
+
+1. Where Permitted. Outdoor storage for nonresidential uses is permitted in the C-2 and I districts. Similar outdoor storage for AG-1 and AG-2 districts shall refer to Article 5.1.3 and Article 5.2.3, respectively. The remainder of Article 8.10 shall apply to the C-2, and I districts.
+2. Location. Outdoor storage areas may be adjacent to the principal building and shall be located in side or rear yards, provided that all minimum setback depths are maintained.
+3. Maneuvering of Inventory. The site shall be of adequate size, shape, and design to ensure:
+
+    a. All maneuvering of inventory will be contained on-site;
+    b. No inventory will be backed onto the site from the public right-of-way;
+    c. All on-site maneuvering shall occur without encroaching onto adjacent properties or rights-of-way; and
+    d. Inventory will be maneuvered without conflicting with vehicular use areas.
+
+4. Screening. Outdoor storage must have screening of not less than 6 feet and no more than 20 feet in height. Stored materials must be a minimum of 2 feet less than the height of the screening. If the lot adjoins a residential district, screening shall be provided at the lot lines sufficient to protect, on a year-round basis, the privacy of adjoining residential uses.
+5. Hazardous Materials. No hazardous or toxic materials are permitted in any outdoor storage, except for materials that are the by-product of industrial manufacturing and are safely removed from the premises within 48 hours of production.
+6. Permitted Items. Items normally appurtenant to the establishment’s permitted uses. 
+
+### Outdoor Display of Merchandise
+
+Outdoor display for this section shall be defined as the outdoor display of products available for sale, such as (but not limited to) propane gas storage racks, ice machines, kiosks, or other merchandise that is clearly intended for sale.
+
+1. Where Permitted. Outdoor display of merchandise is permitted in C-2 and I districts.
+2. Associated Use. The outdoor display area shall only involve items for sale by a business located within a permanent structure or designated area on the same site.
+3. Location. Outdoor display areas shall be located only in the buildable area of the site formed by the required setbacks.
+4. Area of display
+    a. Vehicle Sales, Leasing, and Rental. Customary passenger vehicles, trailers (excluding truck beds), recreational vehicles, motor vehicles, and other motorized machinery and equipment for sale or lease may be displayed on an unlimited basis outside a building on a paved display area or lot, provided that the display area shall not be placed within a required parking/paving setback area and shall not reduce the capacity of a parking lot below that required by Article 7 of these regulations. Such vehicles must be clean, operational, functional, and readily roadworthy. No items shall be stacked.
+    b. All other uses: All display merchandise must be within 10 feet of the building frontage, while still maintaining the entire sidewalk and pedestrian right-of-way. No more than 80 percent of the horizontal length of the building façade shall have outdoor display items. Stacked merchandise shall be no taller than four feet high. Merchandise on racks or shelves shall be no higher than six feet high.

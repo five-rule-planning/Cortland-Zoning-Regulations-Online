@@ -22,13 +22,13 @@ Except as otherwise provided herein, no special use permit shall be granted by t
 
 In case of protest against such special use permit, signed by the owners of twenty percent (20%) or more either of the area of the lots included in such proposed change, or of those immediately adjacent on the side and in the rear thereof extending one hundred (100) feet, therefrom, and of those directly opposite thereto extending one hundred (100) feet from the street frontage of such opposite lots, such special use permit shall not become effective except by the favorable vote of two-thirds of all members of the Village Board.
 
-## Salvage or Junk Yard
-Salvage or junk yard operations and related facilities shall only be allowed by special permit in the AG-1 and AG-2 Zoning Districts under the following conditions:
+## Salvage, Junk Yard, and Recycling Center
+Salvage or junk yard operations or recycling centers and related facilities shall only be allowed by special permit in the AG-1 and AG-2 Zoning Districts under the following conditions:
 
 <ol>
 <li>Located on a tract of land at least one-fourth (1/4) mile from a residential or agricultural farm residence.</li>
-<li>The operation shall be conducted wholly within a noncombustible building or within an area completely surrounded on all sides by a visual obscuring fence, wall or hedge. The fence, wall or hedge shall be of uniform height (at least eight (8) feet high) and uniform texture and color shall be so maintained by the proprietor as to insure maximum safety to the public and preserve the general welfare of the neighborhood. The fence, wall or hedge shall be installed in such a manner as to retain all scrap, junk or other material within the yard and no scrap, junk or other material shall protrude above the fence.</li>
-<li>No junk shall be loaded, unloaded or otherwise placed, either temporarily or permanently, outside the enclosed building, hedge fence or wall, or within the public right-of-way.</li>
+<li>The operation shall be conducted wholly within a noncombustible building or within an area completely surrounded on all sides by a visual obscuring fence or wall. The fence or wall shall be of uniform height (at least eight (8) feet high) and uniform texture and color shall be so maintained by the proprietor as to insure maximum safety to the public and preserve the general welfare of the neighborhood. The fence or wall shall be installed in such a manner as to retain all scrap, junk or other material within the yard and no scrap, junk or other material shall protrude above the fence.</li>
+<li>No junk shall be loaded, unloaded or otherwise placed, either temporarily or permanently, outside the enclosed building, fence, or wall, or within the public right-of-way.</li>
 <li>Any other requirement deemed appropriate and necessary by the Village Board for the protection of the general health and welfare.</li>
 </ol>
 
@@ -39,8 +39,8 @@ Private landfill operations shall only be allowed by special permit in the AGR A
 
 <ol>
 <li>Located on a tract of land at least three hundred (300) feet from a residential or agricultural farm residence.</li>
-<li>The operation shall be conducted wholly within an area completely surrounded on all sides by a fence, wall, or hedge. The fence, wall or hedge shall be of uniform height (at least eight (8) feet high) and uniform texture and color shall be so maintained by the proprietor as to insure maximum safety to the public and preserve the general welfare of the neighborhood. The fence, wall or hedge shall be installed in such a manner as to retain all material within the yard and no material shall protrude above the fence.</li>
-<li>No material shall be loaded, unloaded or otherwise placed, either temporarily or permanently, outside the enclosed building, hedge fence or wall, or within the public right-of-way.</li>
+<li>The operation shall be conducted wholly within an area completely surrounded on all sides by a fence or wall. The fence or wall shall be of uniform height (at least eight (8) feet high) and uniform texture and color shall be so maintained by the proprietor as to insure maximum safety to the public and preserve the general welfare of the neighborhood. The fence or wallshall be installed in such a manner as to retain all material within the yard and no material shall protrude above the fence.</li>
+<li>No material shall be loaded, unloaded or otherwise placed, either temporarily or permanently, outside the enclosed building, fence or wall, or within the public right-of-way.</li>
 <li>Any other requirement deemed appropriate and necessary by the Village Board for the protection of the general health and welfare.</li>
 <li>Special use permits granted under this section shall be subject to annual review and renewal by the Village Board.</li>
 </ol>

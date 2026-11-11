@@ -13,7 +13,9 @@ contrast1 <- "#a40707"
 contrast2 <- "#6600FF"
 typefaceDark <- "#0047AB"
 
-cortland <- read_sf(dsn = "gis/shapefiles/shp-zoning-20251008/shp-zoning-20251008.shp")
+cortland <- read_sf(
+  dsn = "gis/shapefiles/shp-zoning-20251008/shp-zoning-20251008.shp"
+)
 ```
 
 ## AG-1 Agriculture Residential District
@@ -23,23 +25,25 @@ cortland <- read_sf(dsn = "gis/shapefiles/shp-zoning-20251008/shp-zoning-2025100
 #| warning: false
 #| message: false
 #| echo: false
-ag1 <- cortland %>% 
-  filter(zoning == "ag") %>% 
-  mutate(zoning = "AG-1") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+ag1 <- cortland %>%
+  filter(zoning == "ag") %>%
+  mutate(zoning = "AG-1") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   ag1,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#A3FF73"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -91,17 +95,24 @@ A building or premise may be used for the following purpose in the “AG-1” Ag
 
 <li>Flood, erosion and sediment control projects</li>
 
-<li>Broadcast towers and stations, including Amateur Radio or land mobile towers of more than 100 feet when in conformance with the following:</li>
+<li>Telecommunications towers and stations, including amateur radio or land mobile towers of more than 100 feet when in conformance with the following:</li>
 
 <ol type="A">
 
-<li>Towers, including wind generation towers, shall be located a minimum distance of twice the height of the tower from adjacent dwellings or structures other than those associated with the tower facility.</li>
+<li>Towers shall be located at the most restrictive distance of:</li>
 
-<li>Towers shall be a minimum distance from any street, county road or federal highway of equal to or greater than the height of the tower measured from the right-of-way line.</li>
+i. The setback requirements in Article 5.8.6
+ii. A minimum distance of twice the height of the tower from adjacent dwellings
+or structures other than those associated with the tower facility.
+
+<li>Towers shall be a minimum distance from any street, county road, or federal highway of equal to or greater than the height of the tower measured from the rightof-way line.</li>
 
 <li>Towers shall have direct frontage on, or direct access to, an improved street, country or township road (not including dirt or minimum maintenance roads).</li>
 
-<li>Towers must comply with the regulations of the Federal Aviation Administration (FAA).</li>
+<li>Towers must also comply with the most recent International Building Code, ANSI/TIA
+provisions, and Federal Aviation Administration requirements.</li>
+
+<li>Wind generation towers shall be located a minimum distance of twice the height of the tower from adjacent dwellings or structures other than those associated with the tower facility.</li>
 
 </ol>
 
@@ -160,23 +171,25 @@ No limitation.
 #| warning: false
 #| message: false
 #| echo: false
-ag2 <- cortland %>% 
-  filter(zoning == "ag2") %>% 
-  mutate(zoning = "AG-2") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+ag2 <- cortland %>%
+  filter(zoning == "ag2") %>%
+  mutate(zoning = "AG-2") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   ag2,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#38A800"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -304,23 +317,25 @@ No limitation.
 #| warning: false
 #| message: false
 #| echo: false
-r1map <- cortland %>% 
-  filter(zoning == "r1") %>% 
-  mutate(zoning = "R-1") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+r1map <- cortland %>%
+  filter(zoning == "r1") %>%
+  mutate(zoning = "R-1") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   r1map,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#FF7F7F"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -407,19 +422,35 @@ The maximum height and minimum area regulations shall be as follows:
 General Requirements
 
 ```{r R-1 heights, echo = FALSE}
-r1 <- data.frame("Type" = c("Single Family Dwelling", "Two Family Dwelling", "Other Permitted Uses"),
-                 "Lot Area (Sq. Ft.)" = c("14,000", "7,000 per family", "14,000"),
-                 "Required Front Yard" = c("25'", "25'", "25'"),
-                 "Required Side Yard" = c("7'", "7'", "7'"),
-                 "Required Rear Yard" = c("30'", "30'", "30'"),
-                 "Height" = c("35'", "35'", "35'")
-                 )
-colnames(r1) <- c("Type", "Lot Area (Sq. Ft.)", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
-knitr::kable(r1, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
+r1 <- data.frame(
+  "Type" = c(
+    "Single Family Dwelling",
+    "Two Family Dwelling",
+    "Other Permitted Uses"
+  ),
+  "Lot Area (Sq. Ft.)" = c("14,000", "7,000 per family", "14,000"),
+  "Required Front Yard" = c("25'", "25'", "25'"),
+  "Required Side Yard" = c("7'", "7'", "7'"),
+  "Required Rear Yard" = c("30'", "30'", "30'"),
+  "Height" = c("35'", "35'", "35'")
+)
+colnames(r1) <- c(
+  "Type",
+  "Lot Area (Sq. Ft.)",
+  "Required Front Yard",
+  "Required Side Yard",
+  "Required Rear Yard",
+  "Height"
+)
+knitr::kable(r1, align = c("l", "c", "c", "c", "c", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray") %>%
   column_spec(1:6, width = "5em")
 ```
 
@@ -444,23 +475,25 @@ Parking within the R-1 Residential Ordinance District shall be in conformance wi
 #| warning: false
 #| message: false
 #| echo: false
-r2map <- cortland %>% 
-  filter(zoning == "r2") %>% 
-  mutate(zoning = "R-2") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+r2map <- cortland %>%
+  filter(zoning == "r2") %>%
+  mutate(zoning = "R-2") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   r2map,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#FF0000"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -541,23 +574,50 @@ The maximum height and minimum area regulations shall be as follows:
 General Requirements
 
 ```{r R-2 heights, echo = FALSE}
-r2 <- data.frame("Type" = c("Single Family Dwelling", "Two Family Dwelling", "Multifamily Dwelling", "Other Permitted Uses"),
-                 "Lot Area (Sq. Ft.)" = c("14,000", "7,000 per family", "2,200 per family", "14,000"),
-                 "Lot Width" = c("100'", "50' per family", "100'", "100'"),
-                 "Required Front Yard" = c("25'", "25'", "25'", "25'"),
-                 "Required Side Yard" = c("5' or 15' on corner lot", "5' or 15' on corner lot", "5' or 15' on corner lot", "5'"),
-                 "Required Rear Yard" = c("15'", "15'", "15'", "15'"),
-                 "Height" = c("35'", "35'", "45'", "35'")
-                 )
-colnames(r2) <- c("Type", "Lot Area (Sq. Ft.)", "Lot Width", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
+r2 <- data.frame(
+  "Type" = c(
+    "Single Family Dwelling",
+    "Two Family Dwelling",
+    "Multifamily Dwelling",
+    "Other Permitted Uses"
+  ),
+  "Lot Area (Sq. Ft.)" = c(
+    "14,000",
+    "7,000 per family",
+    "2,200 per family",
+    "14,000"
+  ),
+  "Lot Width" = c("100'", "50' per family", "100'", "100'"),
+  "Required Front Yard" = c("25'", "25'", "25'", "25'"),
+  "Required Side Yard" = c(
+    "5' or 15' on corner lot",
+    "5' or 15' on corner lot",
+    "5' or 15' on corner lot",
+    "5'"
+  ),
+  "Required Rear Yard" = c("15'", "15'", "15'", "15'"),
+  "Height" = c("35'", "35'", "45'", "35'")
+)
+colnames(r2) <- c(
+  "Type",
+  "Lot Area (Sq. Ft.)",
+  "Lot Width",
+  "Required Front Yard",
+  "Required Side Yard",
+  "Required Rear Yard",
+  "Height"
+)
 
-knitr::kable(r2, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
+knitr::kable(r2, align = c("l", "c", "c", "c", "c", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray") %>%
   column_spec(1:6, width = "5em")
-
 ```
 
 </li>
@@ -583,23 +643,25 @@ Parking within the R-2 Residential District shall be in conformance with the pro
 #| warning: false
 #| message: false
 #| echo: false
-r3map <- cortland %>% 
-  filter(zoning == "r3") %>% 
-  mutate(zoning = "R-3") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+r3map <- cortland %>%
+  filter(zoning == "r3") %>%
+  mutate(zoning = "R-3") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   r3map,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#A80000"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -684,22 +746,49 @@ The maximum height and minimum area regulations shall be as follows:
 General Requirements
 
 ```{r R-3 heights, echo = FALSE}
-r3 <- data.frame("Type" = c("Single Family Dwelling", "Two Family Dwelling", "Multifamily Dwelling", "Other Permitted Uses"),
-                 "Lot Area (Sq. Ft.)" = c("14,000", "7,000 per family", "2,200 per family", "14,000"),
-                 "Lot Width" = c("100'", "50' per family", "100'", "100'"),
-                 "Required Front Yard" = c("25'", "25'", "25'", "25'"),
-                 "Required Side Yard" = c("5' or 15' on corner lot", "5' or 15' on corner lot", "5' or 15' on corner lot", "5'"),
-                 "Required Rear Yard" = c("15'", "15'", "15'", "15'"),
-                 "Height" = c("35'", "35'", "45'", "35'")
-                 )
-colnames(r3) <- c("Type", "Lot Area (Sq. Ft.)", "Lot Width", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
-knitr::kable(r3, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
+r3 <- data.frame(
+  "Type" = c(
+    "Single Family Dwelling",
+    "Two Family Dwelling",
+    "Multifamily Dwelling",
+    "Other Permitted Uses"
+  ),
+  "Lot Area (Sq. Ft.)" = c(
+    "14,000",
+    "7,000 per family",
+    "2,200 per family",
+    "14,000"
+  ),
+  "Lot Width" = c("100'", "50' per family", "100'", "100'"),
+  "Required Front Yard" = c("25'", "25'", "25'", "25'"),
+  "Required Side Yard" = c(
+    "5' or 15' on corner lot",
+    "5' or 15' on corner lot",
+    "5' or 15' on corner lot",
+    "5'"
+  ),
+  "Required Rear Yard" = c("15'", "15'", "15'", "15'"),
+  "Height" = c("35'", "35'", "45'", "35'")
+)
+colnames(r3) <- c(
+  "Type",
+  "Lot Area (Sq. Ft.)",
+  "Lot Width",
+  "Required Front Yard",
+  "Required Side Yard",
+  "Required Rear Yard",
+  "Height"
+)
+knitr::kable(r3, align = c("l", "c", "c", "c", "c", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray") %>%
   column_spec(1:6, width = "5em")
-
 ```
 
 </li>
@@ -721,23 +810,25 @@ Parking within the R-3 Residential District shall be in conformance with the pro
 #| warning: false
 #| message: false
 #| echo: false
-c1map <- cortland %>% 
-  filter(zoning == "c1") %>% 
-  mutate(zoning = "C-1") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+c1map <- cortland %>%
+  filter(zoning == "c1") %>%
+  mutate(zoning = "C-1") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   c1map,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#73FFDF"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -874,21 +965,37 @@ The maximum height and minimum area regulations shall be as follows:
 General Requirements
 
 ```{r C-1 heights, echo = FALSE}
-c1 <- data.frame("Type" = c("Permitted Uses", "Multifamily Dwelling"),
-                 "Lot Area (Sq. Ft.)" = c("3,750", "2,200 per family"),
-                 "Lot Width" = c("25'", "50'"),
-                 "Required Front Yard" = c("0'", "25'"),
-                 "Required Side Yard" = c("0' or 10' when abutting a residential district", "5' or 7.5' on corner lots"),
-                 "Required Rear Yard" = c("15'", "15'"),
-                 "Height" = c("45'", "45'")
-                 )
-colnames(c1) <- c("Type", "Lot Area (Sq. Ft.)", "Lot Width", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
+c1 <- data.frame(
+  "Type" = c("Permitted Uses", "Multifamily Dwelling"),
+  "Lot Area (Sq. Ft.)" = c("3,750", "2,200 per family"),
+  "Lot Width" = c("25'", "50'"),
+  "Required Front Yard" = c("0'", "25'"),
+  "Required Side Yard" = c(
+    "0' or 10' when abutting a residential district",
+    "5' or 7.5' on corner lots"
+  ),
+  "Required Rear Yard" = c("15'", "15'"),
+  "Height" = c("45'", "45'")
+)
+colnames(c1) <- c(
+  "Type",
+  "Lot Area (Sq. Ft.)",
+  "Lot Width",
+  "Required Front Yard",
+  "Required Side Yard",
+  "Required Rear Yard",
+  "Height"
+)
 
-knitr::kable(c1, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
+knitr::kable(c1, align = c("l", "c", "c", "c", "c", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray") %>%
   column_spec(1:6, width = "5em")
 
 ```
@@ -908,23 +1015,25 @@ Off-street parking and loading requirements contained in Article 7 do not apply 
 #| warning: false
 #| message: false
 #| echo: false
-c2map <- cortland %>% 
-  filter(zoning == "c2") %>% 
-  mutate(zoning = "C-2") %>% 
+#| eval: !expr knitr::is_html_output()
+
+
+c2map <- cortland %>%
+  filter(zoning == "c2") %>%
+  mutate(zoning = "C-2") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   c2map,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#005CE6"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -1046,16 +1155,44 @@ General Requirements
 
 ```{r C-2 heights, echo = FALSE}
 c2 <- data.frame(
-  "Category" = c("Minimum lot area", "Minimum lot width", "Required front yard setback (minimum)", "Side yard setback (minimum)", "Street side yard setback (minimum)", "Rear yard setback (minimum)", "Maximum building height", "Minimum street-facing facades utilizing improved surface", "Minimum buffer yard next to residential use", "Minimum buffer yard next to agricultural use", "Minimum depth of landscaping next to street right of way"),
-  "Amount" = c("7,000 square feet", "50'", "25'", "7'", "25'", "20'", "45'", "35%", "20'", "20'", "10'"))
+  "Category" = c(
+    "Minimum lot area",
+    "Minimum lot width",
+    "Required front yard setback (minimum)",
+    "Side yard setback (minimum)",
+    "Street side yard setback (minimum)",
+    "Rear yard setback (minimum)",
+    "Maximum building height",
+    "Minimum street-facing facades utilizing improved surface",
+    "Minimum buffer yard next to residential use",
+    "Minimum buffer yard next to agricultural use",
+    "Minimum depth of landscaping next to street right of way"
+  ),
+  "Amount" = c(
+    "7,000 square feet",
+    "50'",
+    "25'",
+    "7'",
+    "25'",
+    "20'",
+    "45'",
+    "35%",
+    "20'",
+    "20'",
+    "10'"
+  )
+)
 
-knitr::kable(c2, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
+knitr::kable(c2, align = c("l", "c", "c", "c", "c", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray") %>%
   column_spec(1:2, width = "15em")
-
 ```
 
 Existing lots of record adjacent to Highway 77 may have a minimum front yard setback of 10'. Existing lots of record adjacent to Highway 77 may have a minimum rear yard setback of 15'. An alley can be used as a buffer yard but cannot be used to satisfy setback requirements.
@@ -1151,23 +1288,24 @@ knitr::include_graphics(path = "figures/c2diagramUpdated.png", dpi = 150)
 #| warning: false
 #| message: false
 #| echo: false
-imap <- cortland %>% 
-  filter(zoning == "i") %>% 
-  mutate(zoning = "I") %>% 
+#| eval: !expr knitr::is_html_output()
+
+imap <- cortland %>%
+  filter(zoning == "i") %>%
+  mutate(zoning = "I") %>%
   rename("Zoning" = "zoning")
 
 mapview::mapview(
   imap,
   zcol = "Zoning",
-  map.types = c("CartoDB.Positron", "Esri.WorldImagery"),
+  map.types = c("Esri.WorldImagery", "CartoDB.Positron"),
   col.regions = c(
     "#FFAA00"
   ),
   alpha.regions = c(0.50),
   lwd = 1.5,
   layer.name = "Zoning"
-) 
-
+)
 ```
 :::
 
@@ -1179,111 +1317,133 @@ This district is designed to provide for a wide range of industrial and related 
 
 The following shall be permitted as uses by right:
 
-<ol>
-
-<li>Agriculture, excluding the expansion of existing or development of commercial livestock facilities/operations;</li>
-
-<li>Animal care;</li>
-
-<li>Automobile sales and services;</li>
-
-<li>Automotive wash facilities;</li>
-
-<li>Bottling works;</li>
-
-<li>Building material sales, except for ready-mix concrete plants and similar uses which emit particulate, odor or smoke;</li>
-
-<li>Carpenter, cabinet, plumbing or sheet metal shops;</li>
-
-<li>Grain storage;</li>
-
-<li>Construction sales and services;</li>
-
-<li>Dry cleaning and/or laundry plants;</li>
-
-<li>Farm implementation sales and services;</li>
-
-<li>Farm produce sales;</li>
-
-<li>Food service, restaurants and taverns;</li>
-
-<li>Freight and truck terminals;</li>
-
-<li>Frozen food lockers;</li>
-
-<li>Furniture warehouses;</li>
-
-<li>Garden centers and nurseries;</li>
-
-<li>Groceries, retail and wholesale;</li>
-
-<li>Light manufacturing operations, providing that such use is not noxious by reason of vibration or noise beyond the confines of the building, or by the emission of particulates, fumes, gas odor, or smoke;</li>
-
-<li>Machinery sales and storage lots;</li>
-
-<li>Mobile and modular home sales and manufacturing;</li>
-
-<li>Newspaper publishing plants;</li>
-
-<li>Public and quasi-public uses of an educational, recreational or religious type including public and parochial elementary schools and junior high schools, high schools, private non-profit schools, churches, parsonages, and other religious institutions; parks and playgrounds;</li>
-
-<li>Public utility and public service uses;</li>
-
-<li>Transportation warehousing;</li>
-
-<li>Warehouse or storage houses;</li>
-
-<li>Wholesale sales and services; and</li>
-
-<li>Any similar uses that are determined by the Village Board after referral to and recommendation by the Planning Commission to be of an industrial use similar to the above listed uses.</li>
-
-</ol>
+1. Agriculture, excluding the expansion of existing or the development of commercial livestock facilities/operations;
+2. Animal care;
+3. Automobile sales and services;
+4. Automotive wash facilities;
+5. Bottling works;
+6. Building material sales, except for ready-mix concrete plants and similar uses which emit particulate, odor or smoke;
+7. Carpenter, cabinet, plumbing or sheet metal shops;
+8. Construction sales and services;
+9. Dry cleaning and/or laundry plants;
+10. Electric and telephone substations;
+11. Farm implementation sales and services;
+12. Farm produce sales;
+13. Food service; restaurants, cafes and taverns;
+14. Freight and truck terminals;
+15. Garden centers and nurseries;
+16. Groceries, retail and wholesale;
+17. Industrial Condos whose individual units meet the requirements of permitted principal uses and structures in Section 5.8.2.
+18. Machinery sales;
+19. Mini-Storage facilities;
+20. Mobile and modular home sales and manufacturing;
+21. Newspaper publishing plants;
+22. Public and quasi-public uses of an educational, recreational, or religious type, including public and parochial elementary schools and junior high schools, high schools; private non-profit schools, churches, parsonages, and other religious institutions; parks and playgrounds;
+23. Public utility and public service uses;
+24. Wholesale sales and services.
 
 ### Permitted Accessory Uses
 
-Accessory uses and structures normally appurtenant to permitted uses and structures.
+The following accessory uses and accessory structures shall be permitted:
+
+1. Accessory uses and accessory structures normally appurtenant to the permitted uses and special uses shall adhere to Article 8.1 of these regulations. Accessory structures must adhere to 5.8.6 setback requirements.
+2. Accessory buildings are not permitted in the I Industrial District.
 
 ### Permitted Special Uses
 
-A building or premises may be used for the following purposes in the I Industrial District if a special permit for such use has been obtained in accordance with Article 6 of these regulations.
+A building or premises may be used for the following purposes in the I Industrial District if a special
+permit for such has been obtained in accordance with Article 6 of these regulations.
 
-<ol>
+1. Junk and salvage yard in accordance with Article 6.3;
+2. Recycling center in accordance with Article 6.3;
+3. Ethanol and/or alcohol plants in accordance with Article 3.3 definitions;
+4. Light, medium, or heavy manufacturing/industrial operations, providing that such use is not noxious by reason of vibration or noise beyond the confines of the building, or by the emission of particulates, fumes, gas odor, or smoke;
+5. Live Adult Entertainment Establishments, Adult-Oriented Entertainment, or Adult Retail;
+6. Warehouse, storage houses, transportation warehousing, storage lots;
+7. Telecommunications towers, when in conformance with the following:
+  a. Towers shall be located at the most restrictive distance of:
+    i. The setback requirements in Article 5.8.6;
+    ii. a minimum distance of twice the height of the tower from adjacent dwellings or structures other than those associated with the tower facility.
+  b. Towers shall be a minimum distance from any street, county road, or federal highway of equal to or greater than the height of the tower measured from the rightof-way line.
+  c. Towers shall have direct frontage on, or direct access to, an improved street, country or township road (not including dirt or minimum maintenance roads).
+  d. Towers must also comply with the most recent International Building Code, ANSI/TIA provisions, and Federal Aviation Administration requirements.
+8. Data Centers, provided that – at a minimum – the plan for such a data center covers noise, vibration or other emissions, resource consumption including (but not limited to) energy and water, (etc.) to a rigorous and precise level of detail. Additional standards may be levied, and concerns may be raised, by the Planning Commission or Village Board during the process of acquiring a Special Use Permit under these regulations.
 
-<li>Junk and salvage yard (in conformance with Article 6.3);</li>
-
-<li>Recycling center; and</li>
-
-<li>Ethanol and/or alcohol plants.</li>
-
-</ol>
 
 ### Prohibited Uses and Structures
 
-All other uses and structures which are not specifically permitted or not permissible as special uses shall be prohibited from the I Industrial District.
+All other uses and structures that are not specifically permitted or not permissible as special uses shall be prohibited from the Industrial District.
+
+### Screening
+
+1. Where a site adjoins or is located across an alley from the Residential District, a solid wall or solid fence or compact evergreen hedge six (6) feet in height shall be required on the property line common to such districts, except in a required front yard.
+2. Where a site adjoins or is located across an alley from the Agricultural District, a solid wall or solid fence six (6) feet in height shall be required on the property line common to such districts, except in a required front yard.
+3. Open storage of materials attendant to a permitted use or special permit use shall be permitted only within an area surrounded or screened by a solid wall or solid fence.
+4. Screen requirement must be met with the construction of the building.
 
 ### Height and Area Regulations
 
 The maximum height and minimum are regulations shall be as follows:
 
 ```{r I heights, echo = FALSE}
-i1 <- data.frame("Type" = c("Permitted Uses"),
-                 "Lot Area (Sq. Ft.)" = c("10,000"),
-                 "Lot Width" = c("50'"),
-                 "Required Front Yard" = c("35'"),
-                 "Required Side Yard" = c("0', 10' when abutting a residential district"),
-                 "Required Rear Yard" = c("45'"),
-                 "Height" = c("35'")
-                 )
-colnames(i1) <- c("Type", "Lot Area (Sq. Ft.)", "Lot Width", "Required Front Yard", "Required Side Yard", "Required Rear Yard", "Height")
-knitr::kable(i1, align = c("l", "c", "c", "c", "c", "c"),
-             longtable = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), position = "left", full_width = F,
-                   fixed_thead = T, latex_options = c("striped", "HOLD_position", "repeat_header")) %>% 
-  row_spec(row = 0, color = "white", background = "gray") %>% 
-  column_spec(1:7, width = "5em")
+i1 <- data.frame(
+  "Category" = c(
+    "Minimum lot area",
+    "Minimum lot width",
+    "Required front yard",
+    "Minimum buffer yard",
+    "Street side yard setback (minimum)",
+    "Required rear yard",
+    "Height",
+    "Side yard setback (minimum)"
+  ),
+  "Amount" = c(
+    "10,000 square feet",
+    "100 feet",
+    "35 feet",
+    "20 feet when abutting a residential or agricultural use",
+    "35 feet",
+    "45 feet",
+    "35 feet",
+    "7 feet"
+  )
+)
 
+knitr::kable(i1, align = c("l", "c"), longtable = FALSE) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    position = "left",
+    full_width = F,
+    fixed_thead = T,
+    latex_options = c("striped", "HOLD_position", "repeat_header")
+  ) %>%
+  row_spec(row = 0, color = "white", background = "gray")
 ```
 
 ### Parking Regulations
 
-Parking within the I-1 Industrial District shall be in conformance with the provisions of Article 7 of these regulations.
+Parking within the I Industrial District shall be in conformance with the provisions of Article 7 of
+these regulations.
+
+### Corner Lots
+
+1. Plantings, structures signs, fences, and walls within the I Industrial District on corner lots shall be in conformance with Article 8.8.7 of these regulations.
+
+### Site Lighting
+
+1. Site lighting in the I Industrial District shall be conformance with the provisions of Article 8.9 of these regulations.
+
+### Storage and Shipping Container Placement and Use Requirements
+
+1. It shall be unlawful to place, use, allow, or maintain shipping containers, trailers, or any vehicles within the I Industrial District for storage purposes.
+2. These restrictions shall not apply to, and no permit shall be required for, the placement of portable storage containers in any zoning district for temporary use for not more than fifteen (15) days out of every 365 days. Persons placing portable storage containers upon their premises shall register such placement with the Village Clerk, noting the date upon which the portable storage containers were first placed upon the premises.
+3. Licensed contractors may use shipping containers for the temporary location of an office, equipment and/or materials storage during construction which is taking place on the property where the shipping container is located, if the use is authorized pursuant to zoning permit approval authorizing a remodel or construction project on the same site as the temporarily located shipping container.
+
+### District Diagram
+
+```{r I District Diagram, echo = FALSE}
+knitr::include_graphics(
+  path = "figures/industrial_diagram_20261008.png",
+  dpi = 150
+)
+```

@@ -5,7 +5,7 @@ book:
   title: |
     Village of Cortland, Nebraska\
     Zoning Regulations
-  date: "Last Revised December 11, 2024"
+  date: "Last Revised November 11 2026"
   output-file: cortland-ne-zoning-regulations
   chapters:
     - index.qmd
@@ -21,10 +21,11 @@ book:
     - 11_amendment.qmd
     - 12_complaints.qmd
     - 13_legal_status_provisions.qmd
-  appendices:
-    - 99_appendix.qmd
+  # appendices:
+  #   - 99_appendix.qmd
   favicon: five_rule_logo.png
   downloads: [pdf]
+  
 
 format:
   html:
@@ -42,8 +43,9 @@ format:
     sansfont: "Verdana"
     linkcolor: Teal
     toc-depth: 2
+    prefer-html: true
     include-in-header: 
       text: |
         \usepackage{scrlayer-scrpage}
-        \lofoot{Last Revised December 2024\\by Ordinance XXXXX}
+        \lofoot{Last Revised November 11 2026\\by Ordinance XXXXX}
 pdf-engine: xelatex
